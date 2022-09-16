@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  jupyterlab:
+    image: numpyro_env:latest
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - 'driver': 'nvidia'
+            'capabilities': ['gpu']
+    container_name: numpyro_env
+    ports:
+      - '8888:8888'
+    volumes:
+      - '.:/opt'
+    command:
+      jupyter lab
+          --ip=*
+          --allow-root
+          #--no-browser
+          #--NotebookApp.token='bamboo'
+    tty: true
+    stdin_open: true
