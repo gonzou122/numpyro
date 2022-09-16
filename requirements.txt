@@ -1,0 +1,9 @@
+jupyterlab
+matplotlib
+seaborn
+pandas
+arviz
+numpy
+jax
+scipy
+jedi==0.17.2
